@@ -52,14 +52,11 @@ if __name__ == '__main__':
 
     plot_model(model, to_file='model2.png', show_shapes=True, show_layer_names=False)
 
-    print
-    model.metrics_names
+    print(model.metrics_names)
     # 对测试数据进行测试
-    print
-    model.evaluate(test_images, test_labels,
+    print(model.evaluate(test_images, test_labels,
                    verbose=0,
-                   batch_size=500);
-
+                   batch_size=500))
     # 保存model
     json_string = model.to_json()
     open('my_model_architecture.json', 'w').write(json_string)
